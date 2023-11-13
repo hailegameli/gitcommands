@@ -129,6 +129,8 @@ parse_git_branch() {
 export PS1="\u@\h \[\033[32m\]\w - \$(parse_git_branch)\[\033[00m\] $ "
 
 _________
+BRANCHES
+________
 
 git branch branchname
 
@@ -143,6 +145,58 @@ git branch -a <to list all brnaches>
 git status
 
 git branch -d <branchname>   # to delete a branch
+
+_______
+STASH
+_______
+
+This functionality is useful when you’ve made changes to a branch that you aren’t ready to commit, but you need to switch to another branch
+
+git add 
+
+after adding if you don't want to commit
+
+git stash list
+
+git stash
+
+git stash list
+stash@{0}: WIP on b1: 4e59117 2commit
+
+git stash show -p stash@{0}  ########## to show what changes are been stashed
+
+
+git stash pop stash@{0}
+On branch b1
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   file1
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Dropped stash@{0} (5ef121fe4c8d9dcf8d1bcefc1d7d6f752f530fde
+
+
+git stash drop <stashnumber>  ## stash number stash@{0}####
+
+
+git stash clear   ### to drop entier stash list
+
+__________
+git revert 
+__________
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
