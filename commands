@@ -1,0 +1,87 @@
+
+mkdir test
+
+cd test
+
+ls -a
+
+git init
+
+ls -a
+
+cd .git
+
+ls -a
+
+ls -a
+.		HEAD		description	info		refs
+..		config		hooks		objects
+
+
+cd ..
+
+vi testfile
+  add data
+
+ls
+
+git ls-files
+
+git add testfile
+
+git ls-files
+
+git commit -m "added file 1st commit"
+
+git status - explain
+
+git diff   - explain
+
+
+  
+
+HEAD ->The HEAD is quickly explained. It’s a reference to the active branch. So git knows which branch is currently in use
+
+cat HEAD
+ref: refs/heads/master
+
+Description -> you can create a short description of your repository. But it’s pretty irrelevant if you’re not usin
+ cat description 
+Unnamed repository; edit this file 'description' to name the repository
+
+info->stores the configuration of your repository
+
+Hooks-> some predefined git functions that are executed on certain events
+
+pwd
+/Users/saipavan/test/.git/hooks
+
+create a pre-commit
+________
+cat pre-commit
+#!/bin/sh
+
+echo "You are about to commit" $(git diff --cached --name-only --diff-filter=ACM)
+echo "to" $(git branch --show-current)
+
+while : ; do
+    read -p "Do you really want to do this? [y/n] " RESPONSE < /dev/tty
+    case "${RESPONSE}" in
+        [Yy]* ) exit 0; break;;
+        [Nn]* ) exit 1;;
+    esac
+done
+_______
+
+#chmod +x pre-commit
+
+cd ../../
+
+now make changes and commit the file so it will ask for conformation  to commit as we specifed that in hooks
+
+
+
+
+
+
+
