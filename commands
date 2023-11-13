@@ -17,7 +17,6 @@ ls -a
 .		HEAD		description	info		refs
 ..		config		hooks		objects
 
-
 cd ..
 
 vi testfile
@@ -37,7 +36,34 @@ git status - explain
 
 git diff   - explain
 
+git log
 
+git log 
+
+git log --oneline
+
+
+
+____
+############################### .git files and explanation#############
+ls -a
+.		HEAD		description	info		refs
+..		config		hooks		objects
+
+
+sub-directories:
+
+hooks/ : example scripts
+info/ : exclude file for ignored patterns
+objects/ : all "objects" - commit references
+refs/ : pointers to commit objects - heads and tags
+
+4 files:
+
+HEAD : current branch
+config : configuration options
+description
+index : staging area
   
 
 HEAD ->The HEAD is quickly explained. It’s a reference to the active branch. So git knows which branch is currently in use
@@ -45,11 +71,25 @@ HEAD ->The HEAD is quickly explained. It’s a reference to the active branch. S
 cat HEAD
 ref: refs/heads/master
 
+config->stores the configuration of your repository
+cat config 
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+	ignorecase = true
+	precomposeunicode = true
+
 Description -> you can create a short description of your repository. But it’s pretty irrelevant if you’re not usin
  cat description 
 Unnamed repository; edit this file 'description' to name the repository
 
-info->stores the configuration of your repository
+index -> staging area information --(cat index 
+DIRCeRi:6ȘWeRi:5?????????5?nq']!?[??5c?,file1TREE1 0
+??|S??ԥ?????~?H<,M?serve)
+
+info->stores the configuration of your repository exclude (.gitignore)
 
 Hooks-> some predefined git functions that are executed on certain events
 
@@ -78,6 +118,7 @@ _______
 cd ../../
 
 now make changes and commit the file so it will ask for conformation  to commit as we specifed that in hooks
+
 
 
 
