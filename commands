@@ -182,6 +182,14 @@ git stash drop <stashnumber>  ## stash number stash@{0}####
 
 git stash clear   ### to drop entier stash list
 
+
+
+PUSH
+
+remote branch push
+
+git push --set-upstream origin b9
+
 __________
 git revert 
 __________
