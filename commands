@@ -183,12 +183,21 @@ git stash drop <stashnumber>  ## stash number stash@{0}####
 git stash clear   ### to drop entier stash list
 
 
+_________
+#git remote remove origin
+
+#git remote add origin https://github.com/saidevops8989/testrep.git
+
+#git push origin master
+________
+
 
 PUSH
 
 remote branch push
 
 git push --set-upstream origin b9
+
 
 master branch
 git push -u origin
