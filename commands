@@ -105,7 +105,7 @@ echo "You are about to commit" $(git diff --cached --name-only --diff-filter=ACM
 echo "to" $(git branch --show-current)
 
 while : ; do
-    read -p "Do you really want to do this? [y/n] " RESPONSE < /dev/tty
+    read -p "Hey Haile, do you really want to do this? [y/n] " RESPONSE < /dev/tty
     case "${RESPONSE}" in
         [Yy]* ) exit 0; break;;
         [Nn]* ) exit 1;;
